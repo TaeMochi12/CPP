@@ -14,7 +14,7 @@ public:
         cout << "UID:" << uid << endl;
     }
 };
-class test :virtual public student
+class test : virtual public student
 {
 public:
     int test_marks;
@@ -28,7 +28,7 @@ public:
         cout << "Marks obtained in tests:" << test_marks << endl;
     }
 };
-class sports :virtual public student
+class sports : virtual public student
 {
 public:
     int score;
