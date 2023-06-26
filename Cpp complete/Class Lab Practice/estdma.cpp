@@ -1,31 +1,50 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-class demo
+
+class Student
 {
+
+private:
+    int marks;
+
 public:
-    demo()
+    Student()
     {
-        cout << "Constructor called" << endl;
+        marks = 0;
     }
-    ~demo()
+    Student(int marks)
     {
-        cout << "Destructor called" << endl;
+        this->marks = marks;
+    }
+
+    int giveMarks()
+    {
+        return marks;
     }
 };
+
 int main()
 {
-    int n, marks;
-    cout << "Enter the number of students:";
-    cin >> n;
-    demo *d = new demo[n];
+
+    int n;
     int sum = 0;
+    cout << "Enter number of students:";
+    cin >> n;
+
+    Student *s = new Student[n];
     cout << "Enter marks of students:" << endl;
     for (int i = 0; i < n; i++)
     {
+        int marks;
         cin >> marks;
-        d[i] = marks;
+
+        s[i] = Student(marks);
+        sum += s[i].giveMarks();
     }
+
     cout << "Sum of marks of students:" << sum << endl;
-    delete[] d;
+
+    delete[] s;
+
     return 0;
 }
